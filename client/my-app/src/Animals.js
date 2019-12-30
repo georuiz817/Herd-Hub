@@ -13,7 +13,7 @@ render(){
    let FetchAnimal = this.state.allanimals.map(animal =>
             <div>
                 <ul>
-                    <li>{animal.name} = {animal.group}</li>
+                    <li>{animal.name} == {animal.group}</li>
                 </ul>
             </div>)
         return(
