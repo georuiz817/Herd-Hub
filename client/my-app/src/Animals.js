@@ -8,16 +8,17 @@ class Animals extends Component{
         }
     }
 
-        myFunction() {
+    myFunction = () => {
         // Declare variables
-        var input, filter, li, a, i, txtValue;
+        var input, filter, ul, li, a, i, txtValue;
         input = document.getElementById('myInput');
         filter = input.value.toUpperCase();
-        li = document.getElementsByClassName('animals');
+        ul = document.getElementById("ul");
+        li = ul.getElementsByClassName('li');
       
         // Loop through all list items, and hide those who don't match the search query
         for (i = 0; i < li.length; i++) {
-          a = document.getElementsByClassName("animals")[0];
+          a = this.state.allanimals;
           txtValue = a.textContent || a.innerText;
           if (txtValue.toUpperCase().indexOf(filter) > -1) {
             li[i].style.display = "";
@@ -28,20 +29,13 @@ class Animals extends Component{
       }
 
   
-
 render(){
-   let FetchAnimal = this.state.allanimals.map(animal =>
-            <div>
-                <ul id="myMenu">
-                    <li className="animals">{animal.name} - {animal.group}</li>
-                </ul>
-            </div>)
         return(
             <div>
-                 <input type="text" name="name" id="myInput" value={this.state.name} onChange={this.myFunction} />
-                <h1>Animal group name</h1>
-                <p>Our database consists of animals and their group name. Simply type in the animal or your choice. Or scroll through the list to see what a group of them is called!</p>
-                <p>{FetchAnimal}</p>
+                <input type="text" name="name" id="myInput" onChange={this.myFunction}/>
+                <ul id="ul">
+                    <li className="li"></li>
+                </ul>
             </div>
         )
     }
