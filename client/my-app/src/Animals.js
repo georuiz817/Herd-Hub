@@ -5,37 +5,35 @@ class Animals extends Component{
     super(props);
     this.state = {
         allanimals: [],
+        filter: ""
         }
     }
 
-    myFunction = () => {
-        // Declare variables
-        var input, filter, ul, li, a, i, txtValue;
-        input = document.getElementById('myInput');
-        filter = input.value.toUpperCase();
-        ul = document.getElementById("ul");
-        li = ul.getElementsByClassName('li');
-      
-        // Loop through all list items, and hide those who don't match the search query
-        for (i = 0; i < li.length; i++) {
-          a = this.state.allanimals;
-          txtValue = a.textContent || a.innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-          } else {
-            li[i].style.display = "none";
-          }
+    handleChange = (event) => {
+        this.setState({filter: event.target.value});
+        if(this.filter === document.getElementsByClassName("liName").innerHTML){
+            document.getElementById("searched").innerHTML = document.getElementsByClassName("liGroup").innerHTML
+    }
         }
-      }
+    
+        
 
-  
 render(){
-        return(
+   
+    let FetchAnimal = this.state.allanimals.map(animal =>
+        <div>
+            <ul>
+                <li className="liName">{animal.name}</li>
+                <li className="liGroup"> {animal.group}</li>
+            </ul>
+        </div>)
+
+                return(
             <div>
-                <input type="text" name="name" id="myInput" onChange={this.myFunction}/>
-                <ul id="ul">
-                    <li className="li"></li>
-                </ul>
+                <input type="text" name="name" id="myInput" onChange={this.handleChange}/>
+                <p id="searched"></p>
+               {FetchAnimal}
+               {this.state.filter}
             </div>
         )
     }
