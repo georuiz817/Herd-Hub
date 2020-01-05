@@ -34,6 +34,8 @@ class Animals extends Component{
     
                 return(
             <div>
+                <h1>Animal Filter</h1>
+                <h2>type in the name of an animal. Get the scientific group name back!</h2>
                 <input type="text" name="name" id="myInput" onChange={this.handleChange}/>
                 <p id="searched"></p>
                {FetchAnimal}
