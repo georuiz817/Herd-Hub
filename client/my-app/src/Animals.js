@@ -26,7 +26,8 @@ class Animals extends Component{
     }
 
     handleSearch = () => {
-        console.log(this.state.allanimals.filter(obj => obj.name === this.state.searchedAnimal))
+    console.log(this.state.allanimals.filter(obj => obj.name === this.state.searchedAnimal))
+    console.log(this.state.allanimals.map(obj => obj.name === this.state.searchedAnimal))
     }
 
     
