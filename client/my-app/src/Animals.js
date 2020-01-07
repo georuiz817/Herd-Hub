@@ -22,25 +22,20 @@ class Animals extends Component{
   
     handleChange = (event) => {
         this.setState({searchedAnimal: event.target.value});
-       
     }
 
     handleSearch = () => {
-    console.log(this.state.allanimals.filter(obj => obj.name === this.state.searchedAnimal))
-    console.log(this.state.allanimals.map(obj => obj.name === this.state.searchedAnimal))
-    }
+    let grabbedAnimal = (this.state.allanimals.filter(obj => obj.name === this.state.searchedAnimal)) // returns the whole object if match
+    let grabbedGroup = (grabbedAnimal.map(object => object.group))
+    document.getElementById("searched").innerHTML = grabbedGroup
+}
 
-    
+  
+
+  
     
     render(){
-        let FetchAnimal = this.state.allanimals.map(animal =>
-            <div key={animal.id}>
-                <ul className="myUl">
-                    <li className="liName">{animal.name}</li>
-                    <li className="liGroup"> {animal.group}</li>
-                </ul>
-            </div>)
-     
+      
      return(
             <div>
             <button onClick={this.handleSearch}>a</button>
@@ -52,11 +47,8 @@ class Animals extends Component{
                 
                 <p id="searched"></p>
         
-               {FetchAnimal}
-              
-               {this.state.searchedAnimal}
 
-            </div>
+               </div>
         )
     }
 
