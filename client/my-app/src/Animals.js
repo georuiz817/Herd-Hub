@@ -38,13 +38,14 @@ class Animals extends Component{
       
      return(
             <div>
-            <button onClick={this.handleSearch}>a</button>
                 <h1>Animal Filter</h1>
                 
                 <h2>type in the name of an animal. Get the scientific group name back!</h2>
                 
                 <input type="text" name="name" id="myInput" onChange={this.handleChange}/>
-                
+               
+                <button onClick={this.handleSearch}>Search</button>
+               
                 <p id="searched"></p>
         
 
