@@ -21,8 +21,8 @@ class Animals extends Component{
     }
   
     handleChange = (event) => {
-        this.setState({searchedAnimal: event.target.value});
-    }
+        this.setState({searchedAnimal: event.target.value.toLowerCase()});
+       }
 
     handleSearch = () => {
     let grabbedAnimal = (this.state.allanimals.filter(obj => obj.name === this.state.searchedAnimal)) // returns the whole object if match
@@ -39,8 +39,6 @@ class Animals extends Component{
      return(
             <div>
                 <h1>Animal Filter</h1>
-                
-                <h2>type in the name of an animal. Get the scientific group name back!</h2>
                 
                 <input type="text" name="name" id="myInput" onChange={this.handleChange}/>
                
