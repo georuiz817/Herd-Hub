@@ -39,7 +39,7 @@ class Animals extends Component{
      return(
             <div>
                 <h1>Animal Filter</h1>
-                
+                <p>type in the plural of your favorite animal and get back it's group name</p>
                 <input type="text" name="name" id="myInput" onChange={this.handleChange}/>
                
                 <button onClick={this.handleSearch}>Search</button>
@@ -60,8 +60,4 @@ class Animals extends Component{
 export default Animals
 
 
-// if the filter state object is equal to the name attribute of any allanimals object
-// return the corresponding allanimals objects group 
 
-//if the text of the input is equal to the name attribute of any allanimals object
-//return that allanimals objects group
