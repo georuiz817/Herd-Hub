@@ -1,8 +1,14 @@
 .App {
     text-align: center;
+    
   }
 
-
+  body{
+    background-image: url('http://www.pptbackgrounds.org/uploads/zebra-animal-template-backgrounds-wallpapers.jpg');
+    background-size:     cover;                    
+    background-repeat:   no-repeat;
+    background-position:  center;  
+  }
 
   #header{
 font-size: 100px;
@@ -10,12 +16,12 @@ font-size: 100px;
 
   #myInput{
       margin-right: 15px;
+      width: 300px;
   }
 
-  #button{
-
-  }
-
-  #searched{
-
-  }
+#button{
+  width: 100px;
+  color: white;
+  background-color: black;
+  border: black;
+}
