@@ -18,6 +18,7 @@ class Animals extends Component{
                 allanimals: data
             })
         })
+        this.placeLooper()
     }
   
     handleChange = (event) => {
@@ -30,19 +31,37 @@ class Animals extends Component{
     document.getElementById("searched").innerHTML = grabbedGroup
 }
 
-  
+    placeLooper = () =>{
+        var placeholders = ['bees','gorillas','zebras','lions', 'chickens','alligators'];
+        var length  = placeholders.length;
+        var counter = 0;
+    /*Store the object to a variable*/
+        var inquire = document.getElementById('myInput');
 
-  
-    
-    render(){
+        function ChangePlaceholder(){
+    /*Compare with placeholders length*/
+         if(counter>=length){
+         counter=0;
+        }
+    /*Update placeholder text*/
+        inquire.setAttribute('placeholder',placeholders[counter]);
+    /*Update counter as Index*/
+     counter++;
+    }
+    /*Call ChangePlaceholder() function after 1 seconds, [1000 millisecond = 1 second]*/
+    setInterval(ChangePlaceholder,1000);
+    }
+
+   
+ render(){
       
      return(
             <div>
-                <h1>Animal Filter</h1>
-                <p>type in the plural of your favorite animal and get back it's group name</p>
-                <input type="text" name="name" id="myInput" onChange={this.handleChange}/>
+                <h1 id="header">Animal Filter</h1>
                
-                <button onClick={this.handleSearch}>Search</button>
+                <input type="text" placeholder="oysters" name="name" id="myInput" onChange={this.handleChange}/>
+               
+                <button id="button" onClick={this.handleSearch}>Search</button>
                
                 <p id="searched"></p>
         
