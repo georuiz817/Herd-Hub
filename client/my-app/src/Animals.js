@@ -1,4 +1,6 @@
 import React, {Component} from 'react'
+import { Icon } from '@iconify/react';
+import magnifyingGlass from '@iconify/icons-oi/magnifying-glass';
 
 
 class Animals extends Component{
@@ -59,10 +61,12 @@ class Animals extends Component{
         <div className="siteDiv">
             <h1 id="header">Herd-Hub</h1>
             <h6 id="desc"><u>The animal group search bar</u></h6>
-            <form onSubmit={this.handleSearch}>
-                <input type="text" placeholder="oysters" name="name" id="myInput" onChange={this.handleChange}/>
-                <input  type="submit" className="btn" />
-            </form>
+            <div id="myForm">
+                <form onSubmit={this.handleSearch}>
+                    <input type="text" placeholder="oysters" name="name" id="myInput" onChange={this.handleChange}/>
+                    <button id="button" type="submit"><Icon icon={magnifyingGlass} width="20px" height="20px" /></button>
+                </form>
+            </div>
             <p id="searched"></p>
             
         </div>
@@ -71,7 +75,6 @@ class Animals extends Component{
 }
 
 export default Animals
-
 
 
 
