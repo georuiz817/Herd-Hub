@@ -7,7 +7,13 @@
     background-image: url('http://www.pptbackgrounds.org/uploads/zebra-animal-template-backgrounds-wallpapers.jpg');
     background-size:     cover;                    
     background-repeat:   no-repeat;
-    background-position:  center;  
+    background-position:  center;
+    
+  }
+
+  .siteDiv {
+    margin-right: 100px;
+    font-size: 40px;
   }
 
   #header{
@@ -17,11 +23,12 @@ font-size: 100px;
   #myInput{
       margin-right: 15px;
       width: 300px;
+      height: 40px;
+      font-size: 40px;
   }
 
-#button{
-  width: 100px;
-  color: white;
-  background-color: black;
-  border: black;
+#desc{
+  font-size: 20px;
+  margin-top: -60px;
 }
+

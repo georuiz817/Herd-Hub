@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
- 
+
 
 class Animals extends Component{
     constructor(props) {
@@ -26,7 +26,8 @@ class Animals extends Component{
         this.setState({searchedAnimal: event.target.value.toLowerCase()});
        }
 
-    handleSearch = () => {
+    handleSearch = (e) => {
+    e.preventDefault()
     let grabbedAnimal = (this.state.allanimals.filter(obj => obj.name === this.state.searchedAnimal)) // returns the whole object if match
     let grabbedGroup = (grabbedAnimal.map(object => object.group))
     document.getElementById("searched").innerHTML = grabbedGroup
@@ -53,29 +54,26 @@ class Animals extends Component{
 
    
  render(){
-      
-     return(
-            <div>
-                <h1 id="header">Animal-Search</h1>
-               
+     
+    return(
+        <div className="siteDiv">
+            <h1 id="header">Herd-Hub</h1>
+            <h6 id="desc"><u>The animal group search bar</u></h6>
+            <form onSubmit={this.handleSearch}>
                 <input type="text" placeholder="oysters" name="name" id="myInput" onChange={this.handleChange}/>
-               
-                <button id="button" onClick={this.handleSearch}>Search</button>
-               
-                <p id="searched"></p>
-
-              
-               </div>
+                <input  type="submit" className="btn" />
+            </form>
+            <p id="searched"></p>
+            
+        </div>
         )
     }
-
-   
-
 }
 
-
-
 export default Animals
+
+
+
 
 
 
