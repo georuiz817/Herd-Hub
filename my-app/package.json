@@ -11,7 +11,8 @@
     "react-icons": "^2.2.7",
     "react-scripts": "3.3.0",
     "react-search": "^2.1.1",
-    "react-search-box": "^2.0.2"
+    "react-search-box": "^2.0.2",
+    "yarn": "^1.21.1"
   },
   "scripts": {
     "start": "react-scripts start",
