@@ -81,5 +81,4 @@ test:
 production:
   <<: *default
   database: herd_hub_project_production
-  username: herd_hub_project
-  password: <%= ENV['HERD_HUB_PROJECT_DATABASE_PASSWORD'] %>
+ 
