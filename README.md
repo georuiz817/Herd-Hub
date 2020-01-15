@@ -1,24 +1,4 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+my-app is client side (nested in one branch project for heroku at a later time)
+bundle install / rails db:seed 
+make sure both yarn and postgres properly working/downloaded for optimal front-end / back-end 
+foreman start (http://localhost:5000/)
